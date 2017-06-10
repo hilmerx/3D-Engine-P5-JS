@@ -1,7 +1,11 @@
-function Cell(x,y){
-  this.x = (x+1)/**mpx/2*/
-  this.y = x*w
-  this.z = y*w;
+function Cell(x,y,z){
+  this.i = [x,y]
+  // console.log()
+  this.x = x * w
+  this.y = y * w
+  // this.x = (x*w)-(w*y)+(y*x*40)/**mpx/2*/
+  // this.y = ((y*w)+(500))
+  this.z = z+random(0,100);
 }
 
 
