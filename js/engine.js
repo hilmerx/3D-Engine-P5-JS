@@ -33,8 +33,8 @@ function dot3d(l,x1,y1,z1){
 
   // this.startX = x1
   // this.startY = y1
-  this.startX = mouseX*2-cw
-  this.startY = mouseY*-1+ch
+  this.startX = mouseX*2-cw*2
+  this.startY = mouseY*-2+ch
   this.startZ = z1
   // console.log(l.x, l.y, l.z)
 

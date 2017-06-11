@@ -35,7 +35,7 @@ function  moveObject(){
 function  popLine(){
   if(popCheck>=w){
     for (var i = 0; i<grid.length; i++){
-      grid[i].pop()
+      grid[i].x()
     }
     popCheck=0
   }

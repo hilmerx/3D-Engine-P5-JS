@@ -102,5 +102,5 @@ function draw(){
 
     }*/
   moveObject()
-  // checkPops()
+  checkPops()
 }
