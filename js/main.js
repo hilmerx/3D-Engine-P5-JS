@@ -1,24 +1,20 @@
-function Make2DArray(cols, rows){
-  var arr = new Array(cols);
-  for (var i=0; i<arr.length;i++){
-    arr[i] = new Array(rows);
-  }
-  return arr;
-}
 
-var cols = 30
-var rows = 20
-var cw = 1800;
-var ch = 1100;
-var cd = 1000;
-var mpx = cw/2
-var mpy = ch/2
-var mpz = cd/2
-var w = 100
-var speed = 10
-var popCheck =0
+var rows = 15
+var cols = 20
+var w = 500
+var speed = 20
+var popCheck = 0
+var order =0
+var noiseSize=1000
 
-
+var newLineY
+var cw
+var ch
+var cd
+var mpx
+var mpy
+var mpz
+var startProjZ
 
 
 
@@ -26,7 +22,15 @@ var popCheck =0
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
-  // line1 = new myline(100,20,20,0.5)
+  cw = width;
+  ch = height;
+  cd = 1000;
+  mpx = cw/2
+  mpy = ch/2
+  mpz = cd/2
+  startProjZ = 7000
+
+
   line1 = new myline3d(250,250,-490,-250,250,-490)
   line2 = new myline3d(250,250,500,-250,250,500)
   line3 = new myline3d(-250,250,-490,-250,250,500)
@@ -40,31 +44,22 @@ function setup(){
 
 
   grid = new Make2DArray(cols,rows);
-  for (var j = 0; j<rows; j++){
 
-  for (var i = 0; i<cols; i++){
-
-      // grid[i][j] = new Cell(i,j,500)
+  for (var j = 0; j<rows+1; j++){
+    for (var i = 0; i<cols+1; i++){
       grid[i][j] = new Cell(i,j,0)
-
+      grid[i][j].z = noise(i*random(),j*random())*noiseSize
     }
   }
-console.log("grid",grid[0])
-
-console.log("line",line6)
+  console.log(grid)
+  // showTerrain(0, -250, 0)
 
 }
 
 function draw(){
   background(200)
-  // noFill()
   stroke(0,0,0)
-  // translate(width/2,height/2);
-  // translate(-w/2,-h/2);
-
-  // line(fpx-(line1.h/2)*line1.z,fpy-(line1.h/2)*line1.z,fpx+(line1.h/2)*line1.z, fpy+(line1.h/2)*line1.z)
-
-  // stroke(0,256,0)
+  order = 0
 
   // line3d(line1)
   // line3d(line2)
@@ -77,30 +72,9 @@ function draw(){
   // line3d(line9)
   // line3d(line10)
 
-  for (var i = 0; i<grid.length; i++){
-    beginShape(TRIANGLE_STRIP);
-
-    for (var j = 0; j<grid[i].length; j++){
-        // dot3d(grid[i][j], -250,-250, 500)
-        dot3d(grid[i][j], -1300,-500,3000)
-
-    }
-    endShape()
-  }
-
-
-  /*
-    for (var y = 0; y<cols; y++){
-      beginShape(TRIANGLE_STRIP);
-
-      for (var x = 0; x<rows; x++){
-        vertex(x*scl,y*scl)
-        vertex(x*scl,(y+1)*scl)
-
-      }
-      endShape()
-
-    }*/
+  showTerrain(cols*-w/2, -500, startProjZ)
   moveObject()
   checkPops()
+  // showArray()
+
 }
