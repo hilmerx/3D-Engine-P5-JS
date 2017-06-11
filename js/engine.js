@@ -33,8 +33,8 @@ function dot3d(l,x1,y1,z1){
 
   // this.startX = x1
   // this.startY = y1
-  this.startX = (mouseX)-2350
-  this.startY = (mouseY*-1)+500
+  this.startX = mouseX*2-cw
+  this.startY = mouseY*-1+ch
   this.startZ = z1
   // console.log(l.x, l.y, l.z)
 
@@ -71,7 +71,7 @@ function dot3d(l,x1,y1,z1){
   vertex(x-(100*zfx1),y)
 
   // var textZ = z.toString()
-
+  fill(220,0,0)
   // text(textgrid, x, y-10)
 // console.log(this.startX, this.startY)
   // ellipse(x, y, 10*zfx1, 10*zfx1)

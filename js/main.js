@@ -6,8 +6,8 @@ function Make2DArray(cols, rows){
   return arr;
 }
 
-var cols = 40
-var rows = 40
+var cols = 30
+var rows = 20
 var cw = 1800;
 var ch = 1100;
 var cd = 1000;
@@ -15,6 +15,9 @@ var mpx = cw/2
 var mpy = ch/2
 var mpz = cd/2
 var w = 100
+var speed = 10
+var popCheck =0
+
 
 
 
@@ -37,86 +40,67 @@ function setup(){
 
 
   grid = new Make2DArray(cols,rows);
-  for (var i = 0; i<grid.length; i++){
-    for (var j = 0; j<grid[i].length; j++){
+  for (var j = 0; j<rows; j++){
+
+  for (var i = 0; i<cols; i++){
 
       // grid[i][j] = new Cell(i,j,500)
       grid[i][j] = new Cell(i,j,0)
 
     }
   }
-console.log("grid",grid[0][0])
+console.log("grid",grid[0])
 
 console.log("line",line6)
 
 }
 
 function draw(){
-  background(0)
-  noFill()
-  stroke(0,256,0)
+  background(200)
+  // noFill()
+  stroke(0,0,0)
   // translate(width/2,height/2);
   // translate(-w/2,-h/2);
 
   // line(fpx-(line1.h/2)*line1.z,fpy-(line1.h/2)*line1.z,fpx+(line1.h/2)*line1.z, fpy+(line1.h/2)*line1.z)
 
-  stroke(0,256,0)
+  // stroke(0,256,0)
 
-/*  line3d(line1)
-  line3d(line2)
-  line3d(line3)
-  line3d(line4)
-  line3d(line5)
-  line3d(line6)
-  line3d(line7)
-  line3d(line8)
-  line3d(line9)
-  line3d(line10)
-*/
+  // line3d(line1)
+  // line3d(line2)
+  // line3d(line3)
+  // line3d(line4)
+  // line3d(line5)
+  // line3d(line6)
+  // line3d(line7)
+  // line3d(line8)
+  // line3d(line9)
+  // line3d(line10)
+
   for (var i = 0; i<grid.length; i++){
     beginShape(TRIANGLE_STRIP);
 
     for (var j = 0; j<grid[i].length; j++){
         // dot3d(grid[i][j], -250,-250, 500)
-        dot3d(grid[i][j], -1800,-500,3000)
+        dot3d(grid[i][j], -1300,-500,3000)
 
     }
     endShape()
   }
 
 
-/*
-  for (var y = 0; y<cols; y++){
-    beginShape(TRIANGLE_STRIP);
+  /*
+    for (var y = 0; y<cols; y++){
+      beginShape(TRIANGLE_STRIP);
 
-    for (var x = 0; x<rows; x++){
-      vertex(x*scl,y*scl)
-      vertex(x*scl,(y+1)*scl)
+      for (var x = 0; x<rows; x++){
+        vertex(x*scl,y*scl)
+        vertex(x*scl,(y+1)*scl)
 
-    }
-    endShape()
+      }
+      endShape()
 
-  }*/
-  var arr = new Array(cols);
-
-  for(var i = 0; i<grid.length; i++){
-    arr[i] = new Cell(0,j,0)
-
-
-
-  }
-
-  for (var i = 0; i<grid.length; i++){
-    grid[i].push(arr)
-    grid[i].pop()
-    // beginShape(TRIANGLE_STRIP);
-    //
-    // for (var j = 0; j<grid[i].length; j++){
-    //     // dot3d(grid[i][j], -250,-250, 500)
-    //     dot3d(grid[i][j], -1800,-500,3000)
-    //
-    // }
-    // endShape()
-  }
-
+    }*/
+  moveObject()
+  // checkPops()
 }

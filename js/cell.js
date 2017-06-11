@@ -1,20 +1,15 @@
 function Cell(x,y,z){
   this.i = [x,y]
-  // console.log()
   this.x = x * w
   this.y = y * w
-  // this.x = (x*w)-(w*y)+(y*x*40)/**mpx/2*/
-  // this.y = ((y*w)+(500))
   this.z = z+random(0,100);
-}
+
+  this.newLine = function(){
+  }
 
 
-function myline(h,x,y,z){
-  this.h = h
-  this.x = x
-  this.y = y
-  this.z = z
 }
+
 
 
 function myline3d(x1,y1,z1,x2,y2,z2){
@@ -26,26 +21,59 @@ function myline3d(x1,y1,z1,x2,y2,z2){
   this.z2 = z2
 }
 
+function  moveObject(){
 
-myline.prototype.show = function(){
-  stroke(0)
-  noFill()
-  rect(this.x, this.y, this.w, this.w)
-  if(this.revealed){
-    if(this.bee){
-      ellipseMode(CORNER)
-      fill(255,0,0)
-      ellipse(this.x+this.w * 0.25, this.y+this.w * 0.25, this.w * 0.5,this.w * 0.5)
-    }else if (this.beeCount===0) {
-      fill(222)
-      rect(this.x, this.y, this.w, this.w)
+  popCheck+=speed
 
+    for (var i = 0; i<grid.length; i++){
+      for (var j = 0; j<grid[i].length; j++){
+        grid[i][j].y+=speed
+      }
     }
-    else{
-      fill(222)
-      rect(this.x, this.y, this.w, this.w)
-      fill(0)
-      text(this.beeCount, this.x+this.w*0.5-3, this.y+this.w*0.5+4)
+
+}
+function  popLine(){
+  if(popCheck>=w){
+    for (var i = 0; i<grid.length; i++){
+      grid[i].pop()
     }
+    popCheck=0
   }
 }
+
+function checkPops(){
+  if(popCheck>=w){
+  popLine()
+  addLine()
+  popCheck=0
+
+  }
+
+}
+
+  function  popLine(){
+      for (var i = 0; i<grid.length; i++){
+        grid[i].pop()
+
+    }
+
+  }
+
+  function addLine(){
+    if(popCheck>=w){
+      var newGridLine =[]
+
+      for (var i = 0; i<2; i++){
+        for (var j = 0; j<rows; j++){
+            newGridLine[j] = new Cell(i,j,0)
+        }
+      }
+
+        for (var i = 0; i<grid.length; i++){
+          console.log(newGridLine[i])
+          // grid[i].unshift(newGridLine[i])
+          // grid[i][0].z-=200
+
+      }
+    }
+  }
