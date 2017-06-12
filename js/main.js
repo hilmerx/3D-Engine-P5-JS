@@ -1,8 +1,8 @@
 
-var rows = 15
-var cols = 20
+var rows = 18
+var cols = 22
 var w = 500
-var speed = 20
+var speed = 10
 var popCheck = 0
 var order =0
 var noiseSize=1000
@@ -15,6 +15,8 @@ var mpx
 var mpy
 var mpz
 var startProjZ
+var dim
+var img
 
 
 
@@ -28,9 +30,11 @@ function setup(){
   mpx = cw/2
   mpy = ch/2
   mpz = cd/2
-  startProjZ = 7000
-
-
+  startProjZ = (rows-1)*w
+  dim = width/2;
+  ellipseMode(RADIUS);
+  makeBg();
+  makeBgImage()
   line1 = new myline3d(250,250,-490,-250,250,-490)
   line2 = new myline3d(250,250,500,-250,250,500)
   line3 = new myline3d(-250,250,-490,-250,250,500)
@@ -51,13 +55,14 @@ function setup(){
       grid[i][j].z = noise(i*random(),j*random())*noiseSize
     }
   }
-  console.log(grid)
-  // showTerrain(0, -250, 0)
 
 }
 
 function draw(){
-  background(200)
+  background(250,0,0)
+  // background(153,204,255)
+  image(img, 0, 0);
+
   stroke(0,0,0)
   order = 0
 
@@ -71,10 +76,40 @@ function draw(){
   // line3d(line8)
   // line3d(line9)
   // line3d(line10)
+  // makeBg()
+  showTerrain(cols*-w/2, -500, startProjZ,1)
 
-  showTerrain(cols*-w/2, -500, startProjZ)
+  // showTerrain(cols*-w/2, -500, startProjZ, 1000)
   moveObject()
   checkPops()
   // showArray()
+
+}
+
+
+
+function makeBg(x, y) {
+    noStroke()
+    fill(153,204,255)
+    rect(0,0,width,height/3*2)
+    fill(114,191,91)
+    rect(0,height/3*2,width,height/3)
+
+}
+
+function makeBgImage(){
+
+  img = createImage(windowWidth, windowHeight*2);
+  img.loadPixels();
+// console.log(img.width,img.height)
+  for(var x = 0; x < img.width; x++) {
+    for(var y = 0; y < img.height; y++) {
+      var a = map(y, 0, img.height, 400, 0);
+      img.set(x, y/2, [153,204,255, a+20]);
+      // img.set(x, y/2, [45,45,122, a]);
+
+    }
+  }
+  img.updatePixels();
 
 }

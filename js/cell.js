@@ -72,13 +72,13 @@ function checkPops(){
 
   }
 
-function showTerrain(x,y,z){
+function showTerrain(x,y,z,uod){
 
   for (var i = grid.length-2; i>=(grid.length-2)/2; i--){
     beginShape(TRIANGLE_STRIP);
     for (var j = 0; j<grid[i].length; j++){
-      dot3d(grid[i][j], x, y, z)
-      dot3d(grid[i+1][j], x, y ,z)
+      dot3d(grid[i][j], x, y, z,uod)
+      dot3d(grid[i+1][j], x, y ,z,uod)
       // console.log(j, i)
     }
     endShape()
@@ -86,8 +86,8 @@ function showTerrain(x,y,z){
   for (var i = 0; i<(grid.length-2)/2; i++){
     beginShape(TRIANGLE_STRIP);
     for (var j = 0; j<grid[i].length; j++){
-      dot3d(grid[i][j], x, y, z)
-      dot3d(grid[i+1][j], x, y ,z)
+      dot3d(grid[i][j], x, y, z,uod)
+      dot3d(grid[i+1][j], x, y ,z,uod)
       // console.log(j, i)
     }
     endShape()

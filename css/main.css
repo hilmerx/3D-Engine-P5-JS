@@ -1,3 +1,57 @@
 body, html {
   margin: 0px;
+  padding: 0px;
+
+}
+
+.textbox{
+  /*margin:20px;*/
+  padding: 30px;
+  font-family: Courier;
+  position: absolute;
+  top:100px;
+  left:100px;
+  background-color: #f8f8f8;
+  width: 200px;
+  height: 200px;
+  /*text-align: center;*/
+
+
+
+
+}
+#text2{
+  top:110px;
+  left:110px;
+  background-color: #ddd;
+  opacity: 0.6;
+
+
+
+}
+
+#main{
+  top:100px;
+  left:530px;
+  width: 800px;
+  height: 600px;
+
+  /*background-color: #eeeeee;*/
+  /*opacity: 0.5;*/
+
+
+
+}
+#text3{
+  top:110px;
+  left:540px;
+  width: 800px;
+  height: 600px;
+
+
+  background-color: #ddd;
+  opacity: 0.6;
+
+
+
 }

@@ -21,18 +21,18 @@ function line3d(l){
 
 
 
-function dot3d(l,x1,y1,z1){
+function dot3d(l,x1,y1,z1,upordown){
 
   var newX, newY,newZ, x ,y,zfx1
 
 
   this.startX = x1
-  this.startY = y1+(mouseY*-0.1)+500
+  this.startY = y1+(mouseY*-0.15)+400
   this.startZ = z1
 
 
   newX = l.x + this.startX
-  newY = l.z - this.startY
+  newY = (l.z - this.startY)*upordown
   newZ = (l.y*-1) + this.startZ
 
   var zfx1 = cd/(newZ+cd)
@@ -43,16 +43,19 @@ function dot3d(l,x1,y1,z1){
   y =  mpy + (newY *zfx1)
 
 
+
   stroke(50)
-  fill(200,200,100)
+  fill(200+newZ/10,200+newZ/100,100+newZ/100)
+  // stroke(2+newZ/10,200+newZ/1000,100-newZ/100)
+  // noFill()
 
 
   vertex(x,y)
   // ellipse(x,y,40*zfx1,40*zfx1)
 
-
-  stroke(50)
-  fill(0)
+  //
+  // stroke(50)
+  // fill(0)
 
   var textgrid = l.i.toString()
   // text(textgrid,x  ,y)
