@@ -1,6 +1,11 @@
+console.log("-----------------")
+console.log("-    HILME3D    -")
+console.log("-----------------")
+console.log("3D FOR YOU AND ME")
+console.log("-----------------")
 
 var rows = 18
-var cols = 22
+var cols = 20
 var w = 500
 var speed = 10
 var popCheck = 0
@@ -52,15 +57,19 @@ function setup(){
   for (var j = 0; j<rows+1; j++){
     for (var i = 0; i<cols+1; i++){
       grid[i][j] = new Cell(i,j,0)
-      grid[i][j].z = noise(i*random(),j*random())*noiseSize
+      var updownup = Math.abs(i-(cols/2))/4*-1
+      // console.log(i, updownup)
+      grid[i][j].z = noise(i*random(),j*random())*noiseSize*updownup
     }
   }
 
 }
 
 function draw(){
-  background(250,0,0)
+  background(0)
   // background(153,204,255)
+  // background(0)
+
   image(img, 0, 0);
 
   stroke(0,0,0)
@@ -77,9 +86,9 @@ function draw(){
   // line3d(line9)
   // line3d(line10)
   // makeBg()
-  showTerrain(cols*-w/2, -500, startProjZ,1)
+  showTerrain(cols*-w/2, -400, startProjZ,1)
 
-  // showTerrain(cols*-w/2, -500, startProjZ, 1000)
+
   moveObject()
   checkPops()
   // showArray()
@@ -106,6 +115,8 @@ function makeBgImage(){
     for(var y = 0; y < img.height; y++) {
       var a = map(y, 0, img.height, 400, 0);
       img.set(x, y/2, [153,204,255, a+20]);
+      img.set(x, y/2, [225,225,225, a+10]);
+
       // img.set(x, y/2, [45,45,122, a]);
 
     }

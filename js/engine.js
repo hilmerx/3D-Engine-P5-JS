@@ -26,8 +26,8 @@ function dot3d(l,x1,y1,z1,upordown){
   var newX, newY,newZ, x ,y,zfx1
 
 
-  this.startX = x1
-  this.startY = y1+(mouseY*-0.15)+400
+  this.startX = x1+(mouseX-mpx)*0.05
+  this.startY = y1+(mouseY-mpy)*0.05
   this.startZ = z1
 
 
@@ -44,8 +44,12 @@ function dot3d(l,x1,y1,z1,upordown){
 
 
 
-  stroke(50)
-  fill(200+newZ/10,200+newZ/100,100+newZ/100)
+  // stroke(50)
+  // console.log(newZ/100)
+  stroke(160-newZ/100,160-newZ/100,160-newZ/100)
+  // fill(200+newZ/100+100,200+newZ/100,100+newZ/100)
+  fill(100+newZ/50,100+newZ/50,100+newZ/50)
+
   // stroke(2+newZ/10,200+newZ/1000,100-newZ/100)
   // noFill()
 

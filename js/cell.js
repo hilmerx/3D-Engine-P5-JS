@@ -47,24 +47,20 @@ function checkPops(){
   }
 
   newLineY=0-w
-  console.log(newLineY)
   function addLine(){
     if(popCheck>=w){
       var newGridLine =[]
 
-      // for (var i = 0; i<rows+1; i++){
         for (var j = 0; j<cols+1; j++){
             newGridLine[j] = new Cell(j,newLineY/w,0)
-            newGridLine[j].z = noise(random(50))*noiseSize
+            var updownup = Math.abs(j-(cols/2))/4*-1
+
+            newGridLine[j].z = noise(random(50))*noiseSize*updownup
 
         }
-      // }
-      console.log(newGridLine)
 
         for (var i = 0; i<cols+1; i++){
-          // console.log(newGridLine)
           grid[i].unshift(newGridLine[i])
-          // grid[i][0].z-=200
       }
     }
 
