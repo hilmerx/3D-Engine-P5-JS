@@ -22,8 +22,8 @@ body, html {
   top:100px;
   left:100px;
   background-color: #f8f8f8;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   /*text-align: center;*/
 
 
@@ -44,9 +44,9 @@ body, html {
 
 #main{
   top:100px;
-  left:530px;
-  width: 800px;
-  height: 600px;
+  left:460px;
+  width: 600px;
+  height: 400px;
 
   /*background-color: #eeeeee;*/
   /*opacity: 0.5;*/
@@ -56,9 +56,9 @@ body, html {
 }
 #text3{
   top:110px;
-  left:540px;
-  width: 800px;
-  height: 600px;
+  left:470px;
+  width: 600px;
+  height: 400px;
 
 
   background-color: #fff;
@@ -85,7 +85,9 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-    color: #99ccff;
+    /*color: #99ccff;*/
+    color: darkblue;
+
     text-decoration: underline;
 
 }
