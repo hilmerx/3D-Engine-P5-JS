@@ -24,17 +24,17 @@ function line3d(l){
 function dot3d(l,x1,y1,z1,upordown,i,j){
 
   var newX, newY,newZ, x ,y,zfx1
-
+  var sgz  = shockGrid[i][j].z
 
   // this.startX = x1-(mouseX-mpx)*0.05
-  // this.startY = y1-(mouseY-mpy)*0.05
+  this.startY = y1+(mouseY-mpy)*0.25-200
   this.startX = x1
-  this.startY = y1
+  // this.startY = y1
   this.startZ = z1
 
 
   newX = l.x + this.startX
-  newY = (l.z - this.startY) * upordown - shockGrid[i][j].z
+  newY = (l.z - this.startY) * upordown - sgz
   newZ = (l.y*-1) + this.startZ
 
   var zfx1 = cd/(newZ+cd)
@@ -48,15 +48,20 @@ function dot3d(l,x1,y1,z1,upordown,i,j){
 
   // stroke(50)
   // console.log(newZ/100)
-  stroke(160-newZ/100,160-newZ/100,160-newZ/100)
+  stroke(160-newZ/100,160-newZ/100,160-(newZ/100)+sgz)
+
+  // if(shockWaveOn){
+  //   stroke(160-newZ/100,160-newZ/100,160-(newZ*5))
+  // }
   // fill(200+newZ/100+100,200+newZ/100,100+newZ/100)
-  fill(100+newZ/50,100+newZ/50,100+newZ/50)
+  fill(100+newZ/50+sgz,100+newZ/50,100+newZ/50)
 
   // stroke(2+newZ/10,200+newZ/1000,100-newZ/100)
   // noFill()
 
 
   vertex(x,y)
+  // curveVertex(x,y)
   // ellipse(x,y,40*zfx1,40*zfx1)
 
 

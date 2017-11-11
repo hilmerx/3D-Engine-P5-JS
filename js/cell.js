@@ -26,11 +26,9 @@ function  moveObject(){
 
 function checkPops(){
   if(popCheck>=w){
-    // console.log("pop")
-  popLine()
-  addLine()
-  popCheck=0
-
+    popLine()
+    addLine()
+    popCheck=0
   }
 
 }

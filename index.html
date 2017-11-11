@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="css/main.css">
 
   <script language="javascript" type="text/javascript" src="js/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script language="javascript" type="text/javascript" src="js/p5.sound.js"></script>
 
   <!-- <script language="javascript" type="text/javascript" src="js/p5.dom.js"></script> -->
   <script language="javascript" type="text/javascript" src="js/main.js"></script>
@@ -19,8 +21,8 @@
 
 
 
-  <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="favicon/favicon.png" sizes="32x32" />
+<!-- <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16" /> -->
 
   <!-- <link rel="manifest" href="/manifest.json"> -->
   <!-- <meta name="msapplication-TileColor" content="#ffffff"> -->
@@ -30,29 +32,153 @@
 </head>
 
 <body>
-  <div class="opacity-layer"></div>
+  <!-- <div class="welcomeR">Music</div> -->
+
 
   <div class="textbox" id="text2"></div>
 
-  <div class="textbox"><b>Joel Hilme.</b>
+  <div class="textbox" id="menu"><b>Joel Hilme.</b>
     <br>
+
     <br><a href="">Digital.</a>
     <br><a href="">Music.</a>
     <br><a href="">About.</a>
 
   </div>
-  <div class="textbox" id="text3"></div>
+  <div class="textbox mainbox shadow" id="text3"></div>
 
-  <div class="textbox" id="main"><b>Project 1.</b>
+  <div class="textbox mainbox"><div class="maintextbox">
+    <br><br>
+    <!-- /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\<br><br><br> -->
+
+    Hi,
+    <br><br>I'm <b>Joel Hilme</b>, and I'm a <b>composer/music producer</b> and <b>digital creative</b> from Sweden.
+    <br><br>I run the creative music agency <a href="http://www.musicmakers.se">Music Makers</a>.
+    <br><br>I also do creative coding and web development.
+    <br><br>Vänliga hälsnignar,
+    <br>Joel
+    <!-- <br><br><br>\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ -->
     <br>
-    <br>When writing a project description for external funding always think of your audience. It is essential to use plain English, define your key terms and cite key international and easily accessible references wherever possible. Succinctness and clarity is key.
-<br><br>
-All funding agencies have a page limit with 6-8 pages being common. A quality application is readable, feasible and interesting.
-<br><br>
-The following structure may not necessarily suit all submissions. Always read the guidelines and then read them again.
+    <!-- <br><br>---------------------------------
+    <br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    <br>|&nbsp;&nbsp;&nbsp;Click to go to my:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    <br>|&nbsp;&nbsp;&nbsp;<a href="http://www.musicmakers.se">DIGITAL WORK.</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    <br>|&nbsp;&nbsp;&nbsp;<a href="http://www.musicmakers.se">MUSIC PRODUCTION.</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    <br>|&nbsp;&nbsp;&nbsp;<a href="http://www.musicmakers.se">ABOUT ME.</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    <br>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    <br>--------------------------------- -->
+
+
+    <br><br>-----------------------------------------------<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>Click to go to my:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br><a href="http://www.musicmakers.se">DIGITAL WORK.</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br><a href="http://www.musicmakers.se">MUSIC PRODUCTION.</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br><a href="http://www.musicmakers.se">ABOUT ME.</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>    <br>-----------------------------------------------
+<br><br><br><br><br><br><br><br><br><br><br>
+⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩ ⇩
+    <!-- Wait, there's more!<br><br> -->
+    <!-- &nbsp;&nbsp;&nbsp;||<br>
+    &nbsp;&nbsp;&nbsp;||<br>
+    &nbsp;&nbsp;&nbsp;||<br>
+    &nbsp;__||__<br>
+    &nbsp;\&nbsp;&nbsp;&nbsp;&nbsp;/<br>
+    &nbsp;&nbsp;\&nbsp;&nbsp;/<br>
+    &nbsp;&nbsp;&nbsp;\/ -->
+
+    <br><br><br><br><br><br>These are some of my favorite <b>DIGITAL</b> projects.
+    <br>-----------------------------------------------
+    <!-- <br><br>&nbsp;&nbsp;/---------/
+    <br> &nbsp;/ <U>DIGITAL</U> /
+    <br>/---------/ -->
+    <br><br><br>
+    HILMERX-3D - A 3D engine for the browser.<br>
+    <br>
+    You're probably looking at it right now.<br>
+    <br>
+    I noticed that the library P5s 3D engine was broken, nothing was working like it should, so I built a new one from scratch using javascript and the canvas HTML object. It may be simple and can only do very basic stuff at the moment, but it does the work I want it to.<br>
+
+
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+
+
+Whether article spirits new her covered hastily sitting her. Money witty books nor son add. Chicken age had evening believe but proceed pretend mrs. At missed advice my it no sister. Miss told ham dull knew see she spot near can. Spirit her entire her called.
+
+    Next his only boy meet the fat rose when. Do repair at we misery wanted remove remain income. Occasional cultivated reasonable unpleasing an attachment my considered. Having ask and coming object seemed put did admire figure. Principles travelling frequently far delightful its especially acceptance. Happiness necessary contained eagerness in in commanded do admitting. Favourable continuing difficulty had her solicitude far. Nor doubt off widow all death aware offer. We will up able in both do sing.
+
+    Needed feebly dining oh talked wisdom oppose at. Applauded use attempted strangers now are middleton concluded had. It is tried ﻿no added purse shall no on truth. Pleased anxious or as in by viewing forbade minutes prevent. Too leave had those get being led weeks blind. Had men rose from down lady able. Its son him ferrars proceed six parlors. Her say projection age announcing decisively men. Few gay sir those green men timed downs widow chief. Prevailed remainder may propriety can and.
+
+    On it differed repeated wandered required in. Then girl neat why yet knew rose spot. Moreover property we he kindness greatest be oh striking laughter. In me he at collecting affronting principles apartments. Has visitor law attacks pretend you calling own excited painted. Contented attending smallness it oh ye unwilling. Turned favour man two but lovers. Suffer should if waited common person little oh. Improved civility graceful sex few smallest screened settling. Likely active her warmly has.
+
+    Gay one the what walk then she. Demesne mention promise you justice arrived way. Or increasing to in especially inquietude companions acceptance admiration. Outweigh it families distance wandered ye an. Mr unsatiable at literature connection favourable. We neglected mr perfectly continual dependent.
+    Whether article spirits new her covered hastily sitting her. Money witty books nor son add. Chicken age had evening believe but proceed pretend mrs. At missed advice my it no sister. Miss told ham dull knew see she spot near can. Spirit her entire her called.
+
+    Next his only boy meet the fat rose when. Do repair at we misery wanted remove remain income. Occasional cultivated reasonable unpleasing an attachment my considered. Having ask and coming object seemed put did admire figure. Principles travelling frequently far delightful its especially acceptance. Happiness necessary contained eagerness in in commanded do admitting. Favourable continuing difficulty had her solicitude far. Nor doubt off widow all death aware offer. We will up able in both do sing.
+
+    Needed feebly dining oh talked wisdom oppose at. Applauded use attempted strangers now are middleton concluded had. It is tried ﻿no added purse shall no on truth. Pleased anxious or as in by viewing forbade minutes prevent. Too leave had those get being led weeks blind. Had men rose from down lady able. Its son him ferrars proceed six parlors. Her say projection age announcing decisively men. Few gay sir those green men timed downs widow chief. Prevailed remainder may propriety can and.
+
+    On it differed repeated wandered required in. Then girl neat why yet knew rose spot. Moreover property we he kindness greatest be oh striking laughter. In me he at collecting affronting principles apartments. Has visitor law attacks pretend you calling own excited painted. Contented attending smallness it oh ye unwilling. Turned favour man two but lovers. Suffer should if waited common person little oh. Improved civility graceful sex few smallest screened settling. Likely active her warmly has.
+
+    Gay one the what walk then she. Demesne mention promise you justice arrived way. Or increasing to in especially inquietude companions acceptance admiration. Outweigh it families distance wandered ye an. Mr unsatiable at literature connection favourable. We neglected mr perfectly continual dependent.
+    Whether article spirits new her covered hastily sitting her. Money witty books nor son add. Chicken age had evening believe but proceed pretend mrs. At missed advice my it no sister. Miss told ham dull knew see she spot near can. Spirit her entire her called.
+
+    Next his only boy meet the fat rose when. Do repair at we misery wanted remove remain income. Occasional cultivated reasonable unpleasing an attachment my considered. Having ask and coming object seemed put did admire figure. Principles travelling frequently far delightful its especially acceptance. Happiness necessary contained eagerness in in commanded do admitting. Favourable continuing difficulty had her solicitude far. Nor doubt off widow all death aware offer. We will up able in both do sing.
+
+    Needed feebly dining oh talked wisdom oppose at. Applauded use attempted strangers now are middleton concluded had. It is tried ﻿no added purse shall no on truth. Pleased anxious or as in by viewing forbade minutes prevent. Too leave had those get being led weeks blind. Had men rose from down lady able. Its son him ferrars proceed six parlors. Her say projection age announcing decisively men. Few gay sir those green men timed downs widow chief. Prevailed remainder may propriety can and.
+
+    On it differed repeated wandered required in. Then girl neat why yet knew rose spot. Moreover property we he kindness greatest be oh striking laughter. In me he at collecting affronting principles apartments. Has visitor law attacks pretend you calling own excited painted. Contented attending smallness it oh ye unwilling. Turned favour man two but lovers. Suffer should if waited common person little oh. Improved civility graceful sex few smallest screened settling. Likely active her warmly has.
+
+    Gay one the what walk then she. Demesne mention promise you justice arrived way. Or increasing to in especially inquietude companions acceptance admiration. Outweigh it families distance wandered ye an. Mr unsatiable at literature connection favourable. We neglected mr perfectly continual dependent.
+    Whether article spirits new her covered hastily sitting her. Money witty books nor son add. Chicken age had evening believe but proceed pretend mrs. At missed advice my it no sister. Miss told ham dull knew see she spot near can. Spirit her entire her called.
+
+    Next his only boy meet the fat rose when. Do repair at we misery wanted remove remain income. Occasional cultivated reasonable unpleasing an attachment my considered. Having ask and coming object seemed put did admire figure. Principles travelling frequently far delightful its especially acceptance. Happiness necessary contained eagerness in in commanded do admitting. Favourable continuing difficulty had her solicitude far. Nor doubt off widow all death aware offer. We will up able in both do sing.
+
+    Needed feebly dining oh talked wisdom oppose at. Applauded use attempted strangers now are middleton concluded had. It is tried ﻿no added purse shall no on truth. Pleased anxious or as in by viewing forbade minutes prevent. Too leave had those get being led weeks blind. Had men rose from down lady able. Its son him ferrars proceed six parlors. Her say projection age announcing decisively men. Few gay sir those green men timed downs widow chief. Prevailed remainder may propriety can and.
+
+    On it differed repeated wandered required in. Then girl neat why yet knew rose spot. Moreover property we he kindness greatest be oh striking laughter. In me he at collecting affronting principles apartments. Has visitor law attacks pretend you calling own excited painted. Contented attending smallness it oh ye unwilling. Turned favour man two but lovers. Suffer should if waited common person little oh. Improved civility graceful sex few smallest screened settling. Likely active her warmly has.
+
+    Gay one the what walk then she. Demesne mention promise you justice arrived way. Or increasing to in especially inquietude companions acceptance admiration. Outweigh it families distance wandered ye an. Mr unsatiable at literature connection favourable. We neglected mr perfectly continual dependent.
+    Whether article spirits new her covered hastily sitting her. Money witty books nor son add. Chicken age had evening believe but proceed pretend mrs. At missed advice my it no sister. Miss told ham dull knew see she spot near can. Spirit her entire her called.
+
+    Next his only boy meet the fat rose when. Do repair at we misery wanted remove remain income. Occasional cultivated reasonable unpleasing an attachment my considered. Having ask and coming object seemed put did admire figure. Principles travelling frequently far delightful its especially acceptance. Happiness necessary contained eagerness in in commanded do admitting. Favourable continuing difficulty had her solicitude far. Nor doubt off widow all death aware offer. We will up able in both do sing.
+
+    Needed feebly dining oh talked wisdom oppose at. Applauded use attempted strangers now are middleton concluded had. It is tried ﻿no added purse shall no on truth. Pleased anxious or as in by viewing forbade minutes prevent. Too leave had those get being led weeks blind. Had men rose from down lady able. Its son him ferrars proceed six parlors. Her say projection age announcing decisively men. Few gay sir those green men timed downs widow chief. Prevailed remainder may propriety can and.
+
+    On it differed repeated wandered required in. Then girl neat why yet knew rose spot. Moreover property we he kindness greatest be oh striking laughter. In me he at collecting affronting principles apartments. Has visitor law attacks pretend you calling own excited painted. Contented attending smallness it oh ye unwilling. Turned favour man two but lovers. Suffer should if waited common person little oh. Improved civility graceful sex few smallest screened settling. Likely active her warmly has.
+
+    Gay one the what walk then she. Demesne mention promise you justice arrived way. Or increasing to in especially inquietude companions acceptance admiration. Outweigh it families distance wandered ye an. Mr unsatiable at literature connection favourable. We neglected mr perfectly continual dependent.
+
+
+    <!-- <br><br>Ps. Please press the Play button. -->
+  </div>
+
+
 
 
   </div>
+  <div class="playpause invert" id="play"></div>
+  <div class="playpause invert" id="pause"></div>
+  <div class="progress playpause invert">
+  <div class="percent playpause invert">
+  </div>
+  </div>
+
+
+
+  <!-- <div id="pause">asdfasdf</div> -->
+
+
+  <script language="javascript" type="text/javascript" src="js/domevents.js"></script>
 
 </body>
 </html>

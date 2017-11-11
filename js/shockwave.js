@@ -4,7 +4,7 @@ function shockCell(z){
 
 function keyPressed() {
   if (keyCode === 32) {
-    shock()
+
   }
 }
 function mouseClicked() {
@@ -18,22 +18,41 @@ function mouseClicked() {
 var newShockGridLine =[]
 var quakeVal=0
 function shockWave(){
-
+  if(shockWaveOn){
     for (var i = 0; i<cols+1; i++){
       shockGrid[i].pop()
     }
 
+    // console.log(spectrum)
     for (var j = 0; j<cols+1; j++){
-        newShockGridLine[j] = new shockCell(quakeVal)
+        newShockGridLine[j] = new shockCell(spectrum[12]*3-290)
     }
 
     for (var i = 0; i<cols+1; i++){
       shockGrid[i].unshift(newShockGridLine[i])
+    }
   }
-  quakeVal=0
+  else{
+    for (var i = 0; i<cols+1; i++){
+      shockGrid[i].pop()
+    }
+
+    // console.log(spectrum)
+    for (var j = 0; j<cols+1; j++){
+        newShockGridLine[j] = new shockCell(0)
+    }
+
+    for (var i = 0; i<cols+1; i++){
+      shockGrid[i].unshift(newShockGridLine[i])
+    }
+
+
+  }
+
+  // quakeVal=0
 }
 
 // val shockOn=0;
 function shock(){
-  quakeVal=300;
+  // quakeVal=300;
 }
