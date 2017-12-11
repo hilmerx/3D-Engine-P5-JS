@@ -37,6 +37,7 @@ body, html {
   display: none; }
 
 .mainbox {
+  display: none;
   top: 10%;
   left: 50%;
   transform: translateX(-50%);

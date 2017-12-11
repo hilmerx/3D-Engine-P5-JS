@@ -28,12 +28,12 @@ var startPlayAtLoad = false;
 var shockWaveOn = false
 var shockWavePos = 0
 
+let stars = []
+let star;
+let starSpeed = 0.01
 
 var spectrum
 var spectrumDefined
-
-function preload(){
-}
 
 
 function setup(){
@@ -88,13 +88,32 @@ noTint()
     }
   }
 
+    for (let i = 0; i<1500; i++){
+        stars.push(new Star())
+    }
+
+    stars.sort((a, b) => {
+        return a.z - b.z;
+    })
+
+
 }
 
 function draw(){
   background(99)
-  // background(153,204,255)
-  // if(!shockWaveOn){
     image(img, -100, 0, img.width*width/4, img.height);
+     for (let i = stars.length-1; i > 0; i--){
+        const e = stars[i]
+        drawStar(e)
+        e.z -= starSpeed
+        if (e.z < 0) {
+            stars.splice(i, 1)
+            stars.push(new Star())
+            stars.sort((a, b) => {
+                 return a.z - b.z;
+            })
+        }
+    }
   // }
 
   stroke(0,0,0)
@@ -102,19 +121,14 @@ function draw(){
 
 
   spectrum = fft.analyze().reverse() ;
-  // spectrumDefined = fft.getEnergy("lowMid")
-  // console.log('  VAR SPECTRUM = FFT.ANALYZE()',    spectrum = fft.analyze())
 
   showBg()
-
-
 
   showTerrain(cols*-w/2, -500, startProjZ,1)
 
 
   moveObject()
   checkPops()
-  // showArray()
   shockWave()
 
 }
@@ -156,4 +170,32 @@ function windowResized() {
   }else{
     makeBgImage(140,85,85)
   }
+}
+
+
+function drawStar(star) {
+    let newX = star.x / star.z
+    let newY = star.y / star.z
+
+    let starsize = (120/star.z)-1
+
+    newX += width / 2
+    newY += height / 1.6
+    noStroke()
+    fill(255)
+    ellipse(newX, newY, starsize, starsize)
+}
+
+class Star {
+    constructor() {
+        this.x = random(-width*40, width*40)
+        this.y = random(-height*64, -12000)
+        this.z = random(100,20)
+    }
+
+    setXY(x, y, z){
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
 }

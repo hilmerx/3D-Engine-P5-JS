@@ -19,6 +19,7 @@ var newShockGridLine =[]
 var quakeVal=0
 function shockWave(){
   if(shockWaveOn){
+    starSpeed = 0.2;
     for (var i = 0; i<cols+1; i++){
       shockGrid[i].pop()
     }
@@ -33,6 +34,7 @@ function shockWave(){
     }
   }
   else{
+    starSpeed = 0.01;
     for (var i = 0; i<cols+1; i++){
       shockGrid[i].pop()
     }
