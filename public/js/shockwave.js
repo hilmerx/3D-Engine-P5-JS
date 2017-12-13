@@ -1,6 +1,4 @@
-function shockCell(z){
-    this.z = z
-}
+
 
 var newShockGridLine =[]
 
